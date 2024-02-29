@@ -1,0 +1,47 @@
+Simulating: UCS
+L: 2 Average expanded states: 5.93 Average generated states: 17 Average states in memory: 12.83
+L: 4 Average expanded states: 23.46 Average generated states: 65 Average states in memory: 42.86
+L: 6 Average expanded states: 74.21 Average generated states: 204 Average states in memory: 128.56
+L: 8 Average expanded states: 215.64 Average generated states: 589 Average states in memory: 357.3
+L: 10 Average expanded states: 596.48 Average generated states: 1617 Average states in memory: 962.72
+L: 12 Average expanded states: 1590.1 Average generated states: 4329 Average states in memory: 2566.17
+
+Simulating: AStarMisplaced
+L: 2 Average expanded states: 2.0 Average generated states: 6 Average states in memory: 5.92
+L: 4 Average expanded states: 4.11 Average generated states: 13 Average states in memory: 9.94
+L: 6 Average expanded states: 8.21 Average generated states: 24 Average states in memory: 17.58
+L: 8 Average expanded states: 16.07 Average generated states: 46 Average states in memory: 31.76
+L: 10 Average expanded states: 39.79 Average generated states: 111 Average states in memory: 72.22
+L: 12 Average expanded states: 90.12 Average generated states: 249 Average states in memory: 156.41
+
+Simulating: AStarManhattan
+L: 2 Average expanded states: 2.0 Average generated states: 6 Average states in memory: 5.9
+L: 4 Average expanded states: 4.0 Average generated states: 12 Average states in memory: 9.76
+L: 6 Average expanded states: 6.68 Average generated states: 20 Average states in memory: 14.5
+L: 8 Average expanded states: 10.63 Average generated states: 31 Average states in memory: 21.65
+L: 10 Average expanded states: 16.96 Average generated states: 48 Average states in memory: 32.52
+L: 12 Average expanded states: 29.53 Average generated states: 82 Average states in memory: 53.17
+
+Simulating: ID
+L: 2 Average expanded states: 9.04 Average generated states: 27 Average states in memory: 3.0
+L: 4 Average expanded states: 46.36 Average generated states: 129 Average states in memory: 5.0
+L: 6 Average expanded states: 177.32 Average generated states: 487 Average states in memory: 7.0
+L: 8 Average expanded states: 531.79 Average generated states: 1456 Average states in memory: 9.0
+L: 10 Average expanded states: 1675.49 Average generated states: 4571 Average states in memory: 11.0
+L: 12 Average expanded states: 5040.69 Average generated states: 13763 Average states in memory: 13.0
+
+Simulating: IDAStarMisplaced
+L: 2 Average expanded states: 4.0 Average generated states: 12 Average states in memory: 3.0
+L: 4 Average expanded states: 8.07 Average generated states: 21 Average states in memory: 5.0
+L: 6 Average expanded states: 14.29 Average generated states: 39 Average states in memory: 7.0
+L: 8 Average expanded states: 30.39 Average generated states: 84 Average states in memory: 9.0
+L: 10 Average expanded states: 65.0 Average generated states: 180 Average states in memory: 11.0
+L: 12 Average expanded states: 176.2 Average generated states: 483 Average states in memory: 13.0
+
+Simulating: IDAStarManhattan
+L: 2 Average expanded states: 4.0 Average generated states: 12 Average states in memory: 3.0
+L: 4 Average expanded states: 8.0 Average generated states: 21 Average states in memory: 5.0
+L: 6 Average expanded states: 12.43 Average generated states: 35 Average states in memory: 7.0
+L: 8 Average expanded states: 17.96 Average generated states: 48 Average states in memory: 9.0
+L: 10 Average expanded states: 26.3 Average generated states: 71 Average states in memory: 11.0
+L: 12 Average expanded states: 59.37 Average generated states: 159 Average states in memory: 13.0
