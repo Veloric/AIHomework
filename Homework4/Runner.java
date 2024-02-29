@@ -10,10 +10,11 @@ public class Runner {
 
     public static void main(String[] args){
         String[] algs = {"UCS" ,"AStarMisplaced", "AStarManhattan", "ID", "IDAStarMisplaced", "IDAStarManhattan"};
-        for(int i = 2; i <= 12; i = i + 2){
-            ArrayList<SlidingTilePuzzle> generatedList = PuzzleCompairson.generatePuzzles(3, 3, i, 100);
-            for(int j = 0; j < algs.length; j++){
-                System.out.println(PuzzleCompairson.runSimulations(generatedList, i, algs[j]));
+        for(int i = 0; i < algs.length; i++){
+            System.out.println("Simulating: " + algs[i]);
+            for(int ii = 2; ii <= 12; ii = ii + 2){
+                ArrayList<SlidingTilePuzzle> generatedList = PuzzleCompairson.generatePuzzles(3, 3, ii, 100);
+                System.out.println(PuzzleCompairson.runSimulations(generatedList, ii, algs[i]));
             }
         }
 

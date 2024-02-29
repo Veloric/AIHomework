@@ -27,7 +27,7 @@ public class PuzzleCompairson {
     }
 
     public static String runSimulations(ArrayList<SlidingTilePuzzle> puzzles, int optimalSolution, String alg){
-        String returnString = alg + ": \nL: " + optimalSolution + " ";
+        String returnString = "L: " + optimalSolution + " ";
         int expandedStates = 0;
         long generatedStates = 0;
         int maxMemory = 0;
