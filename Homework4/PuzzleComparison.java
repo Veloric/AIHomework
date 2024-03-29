@@ -7,7 +7,7 @@
  import java.util.ArrayList;
  import csis4463.*;
 
-public class PuzzleCompairson {
+public class PuzzleComparison {
 
     /**
      * Generates a random amount of specified puzzles

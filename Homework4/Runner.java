@@ -13,9 +13,10 @@ public class Runner {
         for(int i = 0; i < algs.length; i++){
             System.out.println("Simulating: " + algs[i]);
             for(int ii = 2; ii <= 12; ii = ii + 2){
-                ArrayList<SlidingTilePuzzle> generatedList = PuzzleCompairson.generatePuzzles(3, 3, ii, 100);
-                System.out.println(PuzzleCompairson.runSimulations(generatedList, ii, algs[i]));
+                ArrayList<SlidingTilePuzzle> generatedList = PuzzleComparison.generatePuzzles(3, 3, ii, 100);
+                System.out.println(PuzzleComparison.runSimulations(generatedList, ii, algs[i]));
             }
+            System.out.println();
         }
 
         
