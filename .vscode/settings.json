@@ -2,5 +2,10 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "puzzle.jar"
+    ],
+    "java.project.sourcePaths": [
+        "Homework7",
+        "Homework4",
+        "."
     ]
 }
