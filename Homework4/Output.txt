@@ -1,3 +1,5 @@
+Laiba Khan & Kyle Geddes
+
 Simulating: UCS
 L: 2 Average expanded states: 5.93 Average generated states: 17 Average states in memory: 12.83
 L: 4 Average expanded states: 23.46 Average generated states: 65 Average states in memory: 42.86

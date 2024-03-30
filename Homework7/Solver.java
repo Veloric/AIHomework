@@ -8,83 +8,88 @@
 public class Solver {
 
     public static boolean checkSafe(int[][] gameBoard, int row, int col, int num){
-        boolean safe = true;
+        return !DuplicInRow(gameBoard, row, num)
+        && !DuplicInColumn(gameBoard, col, num)
+        && !DuplicInSubmatrix(gameBoard, row - row % 3, col - col % 3, num);
+    }
 
-
+    private static boolean DuplicInRow(int[][] gameBoard, int row, int num){
         for(int i = 0; i < gameBoard.length; i++){
             if(gameBoard[row][i] == num){
-                safe = false;
-                return safe;
+                return true;
             }
-        }
+        }    
+        return false;    
+    }
+
+    private static boolean DuplicInColumn(int[][] gameBoard, int col, int num){
         for(int i = 0; i < gameBoard.length; i++){
             if(gameBoard[i][col] == num){
-                safe = false;
-                return safe;
+                return true;
             }
-        }
+        }     
+        return false;   
+    }
+
+    private static boolean DuplicInSubmatrix(int[][] gameBoard, int row, int col, int num){
         int sqrt = (int)Math.sqrt(gameBoard.length);
         int matrixRowStart = row - row % sqrt;
         int matrixColStart = col - col % sqrt;
 
-        for(int i = matrixRowStart; i < matrixRowStart + sqrt; i++){
-            for(int j = matrixColStart; j < matrixColStart + sqrt; j++){
-                if(gameBoard[i][j] == num){
-                    safe = false;
-                    return safe;
+            for(int i = matrixRowStart; i < matrixRowStart + sqrt; i++){
+                for(int j = matrixColStart; j < matrixColStart + sqrt; j++){
+                    if(gameBoard[i][j] == num){
+                        return true;
+                    }
                 }
             }
+            
+            return false;
+    }        
+    private static int[] findEmptyCells(int[][] gameBoard){
+        for(int row = 0; row < gameBoard.length; row++){
+            for(int col = 0; col < gameBoard.length; col++){
+                if(gameBoard[row][col] == 0){
+                    return new int[]{row, col};
+                } 
+            }
         }
-        
-        return safe;
-    }
 
+        return null;
+    }     
+    
     public static boolean solveSudoku(Sudoku game, int num){
-        boolean solved = false;
-        int row = -1;
-        int col = -1;
-        int[][] gameBoard = game.getBoard();
-        boolean empty = true;
+        int[] emptyCells = findEmptyCells(game.getBoard());
 
-        for(int i = 0; i < num; i++){
-            for(int j = 0; j < num; j++){
-                if(gameBoard[i][j] == 0){
-                    row = i;
-                    col = j;
-                    empty = false;
-                    break;
-                }
-            }
-            if(!empty){
-                break;
-            }
+        if (emptyCells == null) {
+            return true; //If there are no emptyCells, then the sudoku is solved.
         }
-        if(empty == true){
-            solved = true;
-        }
+
+        int row = emptyCells[0];
+        int col = emptyCells[1];
 
         for(int i = 1; i <= num; i++){
-            if(checkSafe(gameBoard, row, col, i)){
-                gameBoard[row][col] = i;
-                if(solveSudoku(game, num)){
-                    solved = true;
-                    return solved;
-                } else {
-                    gameBoard[row][col] = 0;
+            if(checkSafe(game.getBoard(), row, col, i)) {
+                game.getBoard()[row][col] = i;
+
+                if (solveSudoku(game, num)) {
+                    return true; 
                 }
+
+            game.getBoard()[row][col] = 0;
             }
         }
-
-        return solved;
-    }
+        return false;
+    }       
 
     public static void main(String[] args){
-        Sudoku game = SudokuReader.readBoard("./sudokus/s05a.txt");
-        if(solveSudoku(game, game.getBoard().length)){
-            System.out.println(game.printSudokuPuzzle());
-        } else {
-            System.out.println("No Solution Found");
-        }
+        Sudoku game = SudokuReader.readBoard("./sudokus/s05c.txt");
+
+            if(solveSudoku(game, game.getBoard().length)){
+                System.out.println(game.printSudokuPuzzle());
+            } else {
+                System.out.println("No Solution Found");
+            }
     }
     
 }

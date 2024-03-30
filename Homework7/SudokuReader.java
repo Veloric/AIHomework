@@ -10,18 +10,21 @@
 public class SudokuReader {
     
     public static Sudoku readBoard(String fileName){
-        int[][] board = new int[8][8];
+        int[][] board = new int[9][9];
         try {
             File file = new File(fileName);
             Scanner reader = new Scanner(file);
             int rowNum = 0;
-            while(reader.hasNextLine()){
-                int[] row = new int[8];
+            int linesToRead = 0;
+            
+            while(reader.hasNextLine() && linesToRead < 9){
+                int[] row = new int[9];
                 for(int i = 0; i < row.length; i++){
                     row[i] = reader.nextInt();
                 }
                 board[rowNum] = row;
                 rowNum++;
+                linesToRead++;
             }
             reader.close();
         } catch(FileNotFoundException e) {
